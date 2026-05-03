@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #030712;
+  color: #E2E8F0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.animated-grid {
+  background-image:
+    linear-gradient(rgba(99,179,237,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,179,237,0.12) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: gridScroll 20s linear infinite;
+}
+
+@keyframes gridScroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 80px; }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #22D3EE, #3B82F6, #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.slide-up {
+  animation: slideUp .7s ease both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse-dot {
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .45; transform: scale(.8); }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22D3EE;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1, h2, h3, p, a, span {
+    overflow-wrap: anywhere;
+  }
+}
